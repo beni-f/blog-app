@@ -16,5 +16,5 @@ class PostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Post
-        fields = ['id', 'author', 'title', 'content', 'created_at', 'updated_at', 'comments']
+        fields = ['id', 'author', 'title', 'content', 'created_at', 'updated_at', 'comments', 'cover_image', 'category']
         read_only_fields = ['author', 'created_at', 'updated_at', 'comments']

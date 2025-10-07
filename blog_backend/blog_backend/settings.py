@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=True)
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -133,9 +133,15 @@ REFRESH_TOKEN_LIFETIME = timedelta(days=1)
 AUTH_USER_MODEL = 'account.CustomUser'
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
+    'http://localhost:3000',
+    'https://blog-app-eight-topaz.vercel.app',
 ]
+CORS_ALLOW_CREDENTIALS = True
 
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:3000',
+    'https://blog-app-eight-topaz.vercel.app'
 ]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
