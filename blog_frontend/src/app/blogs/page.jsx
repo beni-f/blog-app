@@ -12,14 +12,13 @@ const categoriesList = ["All", "Technology", "Lifestyle", "Education", "Health",
 
 export default function BlogPostsPage() {
     const searchParams = useSearchParams()
-    const initialCategory = searchParams.get("category") || "All"
     const [posts, setPosts] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
-    const [selectedCategory, setSelectedCategory] = useState(initialCategory)
+    const [selectedCategory, setSelectedCategory] = useState("All")
 
     useEffect(() => {
-        const category = searchParams.get("category")
+        const category = searchParams?.get("category")
         if (category) setSelectedCategory(category)
     }, [searchParams])
 
@@ -62,13 +61,10 @@ export default function BlogPostsPage() {
             <NavigationBar />
             <div className="min-h-screen bg-background">
                 <div className="mx-auto max-w-7xl px-6 py-12">
-                    {/* Header */}
                     <div className="mb-12">
                         <h1 className="mb-4 text-4xl font-bold text-balance md:text-5xl">Blog Posts</h1>
                         <p className="text-lg text-muted-foreground">Explore our latest articles and insights</p>
                     </div>
-
-                    {/* Category Filters */}
                     <div className="mb-12 flex flex-wrap gap-3">
                         {categoriesList.map((category) => (
                             <Button
@@ -82,7 +78,6 @@ export default function BlogPostsPage() {
                         ))}
                     </div>
 
-                    {/* Blog Grid */}
                     <motion.div
                         className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
                         variants={containerVariants}
