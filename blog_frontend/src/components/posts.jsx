@@ -105,7 +105,7 @@ export default function Posts() {
                                     <SmallPostCard
                                         key={post.id}
                                         id={post.id}
-                                        image={post.cover_image || "/placeholder.svg"}
+                                        image={post.cover_image}
                                         title={post.title}
                                         date={new Date(post.created_at).toLocaleDateString()}
                                     />
