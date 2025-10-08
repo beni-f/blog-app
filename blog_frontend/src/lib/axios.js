@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-    baseURL: 'http://localhost:8000/api',
+    baseURL: 'https://blog-app-mryd.onrender.com/api',
     withCredentials: true,
     timeout: 20000,
     headers: {
