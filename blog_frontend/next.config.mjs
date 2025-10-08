@@ -2,7 +2,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ["images.unsplash.com", "ui.aceternity.com"],
+        domains: ["images.unsplash.com", "ui.aceternity.com", "blog-app-mryd.onrender.com", "https://blog-app-mryd.onrender.com"],
         remotePatterns: [
             {
                 protocol: 'http',
