@@ -1,12 +1,12 @@
 "use client"
 
 import React, { useEffect, useState } from "react"
-import axios from "axios"
 import { motion, AnimatePresence } from "framer-motion"
 import { BlogPostCard } from "@/components/blog-card"
 import { Button } from "@/components/ui/button"
 import NavigationBar from "@/components/navbar"
 import { useSearchParams } from "next/navigation"
+import axiosInstance from "@/lib/axios"
 
 const categoriesList = ["All", "Technology", "Lifestyle", "Education", "Health", "Travel"]
 
@@ -25,7 +25,7 @@ export default function BlogPostsClient() {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await axios.get("http://localhost:8000/api/posts/")
+                const response = await axiosInstance.get("/posts/")
                 setPosts(response.data)
             } catch (err) {
                 console.error(err)
